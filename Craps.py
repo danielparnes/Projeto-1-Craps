@@ -51,3 +51,6 @@ while din>0:
             else:
                 din=din-aposta
                 print('Resultado dos dados, perdeu: ',d1+d2)
+    else:
+        print('Fim')
+print('Perdeu')
