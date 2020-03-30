@@ -30,3 +30,16 @@ while din>0:
                 else:
                     print('Point = 7')
                     din=din-aposta
+        elif comeout=='F':
+            if (d1+d2==5 or d1+d2==6 or d1+d2==7 or d1+d2==8):
+                din=0
+                print('Resultado dos dados, perdeu: ',d1+d2)
+            elif (d1+d2==3 or d1+d2==4 or d1+d2==9 or d1+d2==10 or d1+d2==11):
+                din=din+aposta
+                print('Resultado dos dados, ganhou: ',d1+d2)
+            elif d1+d2==2:
+                din=din+2*aposta
+                print('Resultado dos dados, ganhou: ',d1+d2)
+            else:
+                din=din+3*aposta
+                print('Resultado dos dados, ganhou: ',d1+d2)
