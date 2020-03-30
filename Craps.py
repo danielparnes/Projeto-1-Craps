@@ -1,12 +1,9 @@
-import random
-
-din=100
 while din>0:
     print('seu dinheiro é: ',din)
     aposta=int(input('Quanto você deseja apostar? '))
     d1=random.randint(1,6)
     d2=random.randint(1,6)
-    while aposta>0:
+    if aposta>0:
         print('Fase: Come Out')
         comeout=input('Qual aposta deseja fazer?(PLB,F,AC,T) ')
         if comeout=='PLB':
