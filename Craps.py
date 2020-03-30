@@ -18,7 +18,7 @@ while din>0:
                 print('Resultado dos dados: ',d1+d2)
                 d3=random.randint(1,6)
                 d4=random.randint(1,6)
-                while (d3+d4!=d1+d2 or d3+d4!=7):
+                if (d3+d4!=d1+d2 or d3+d4!=7):
                     d3=random.randint(1,6)
                     d4=random.randint(1,6)
                 if d3+d4==d1+d2:
