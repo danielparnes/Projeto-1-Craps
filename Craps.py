@@ -19,9 +19,10 @@ while din>0:
                 d3=random.randint(1,6)
                 d4=random.randint(1,6)
                 if (d3+d4!=d1+d2 or d3+d4!=7):
-                    d3=random.randint(1,6)
-                    d4=random.randint(1,6)
-                if d3+d4==d1+d2:
+                    while (d3+d4!=d1+d2 or d3+d4!=7):
+                        d3=random.randint(1,6)
+                        d4=random.randint(1,6)
+                elif d3+d4==d1+d2:
                     print('Comeout= Point')
                     din=din+aposta
                 else:
