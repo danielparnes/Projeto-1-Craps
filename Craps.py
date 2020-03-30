@@ -1,3 +1,6 @@
+import random
+
+din=100
 while din>0:
     print('seu dinheiro é: ',din)
     aposta=int(input('Quanto você deseja apostar? '))
@@ -24,11 +27,11 @@ while din>0:
                         d3=random.randint(1,6)
                         d4=random.randint(1,6)
                     if d3+d4==d1+d2:
-                        print('Comeout= Point')
+                        print('Comeout= Point, ganhou')
                         din=din+aposta
                         condicao = False
                     else:
-                        print('Point = 7')
+                        print('Point = 7, perdeu')
                         din=din-aposta
                         condicao = False
         elif comeout=='F':
@@ -47,6 +50,13 @@ while din>0:
         elif comeout=='AC':
             if(d1+d2==2 or d1+d2==3 or d1+d2==12):
                 din=din+7*aposta
+                print('Resultado dos dados, ganhou: ',d1+d2)
+            else:
+                din=din-aposta
+                print('Resultado dos dados, perdeu: ',d1+d2)
+        elif comeout=='T':
+            if d1+d2==12:
+                din=din+30*aposta
                 print('Resultado dos dados, ganhou: ',d1+d2)
             else:
                 din=din-aposta
