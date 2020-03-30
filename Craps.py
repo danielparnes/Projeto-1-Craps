@@ -40,3 +40,10 @@ while din>0:
             else:
                 din=din+3*aposta
                 print('Resultado dos dados, ganhou: ',d1+d2)
+        elif comeout=='AC':
+            if(d1+d2==2 or d1+d2==3 or d1+d2==12):
+                din=din+7*aposta
+                print('Resultado dos dados, ganhou: ',d1+d2)
+            else:
+                din=din-aposta
+                print('Resultado dos dados, perdeu: ',d1+d2)
