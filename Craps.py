@@ -15,19 +15,22 @@ while din>0:
                 print('Resultado dos dados: ',d1+d2)
             else:
                 print('Fase:Point')
+                condicao = True
                 print('Resultado dos dados: ',d1+d2)
                 d3=random.randint(1,6)
                 d4=random.randint(1,6)
-                if (d3+d4!=d1+d2 or d3+d4!=7):
-                    while (d3+d4!=d1+d2 or d3+d4!=7):
+                while condicao:
+                    if (d3+d4!=d1+d2 or d3+d4!=7):
                         d3=random.randint(1,6)
                         d4=random.randint(1,6)
-                elif d3+d4==d1+d2:
-                    print('Comeout= Point')
-                    din=din+aposta
-                else:
-                    print('Point = 7')
-                    din=din-aposta
+                    if d3+d4==d1+d2:
+                        print('Comeout= Point')
+                        din=din+aposta
+                        condicao = False
+                    else:
+                        print('Point = 7')
+                        din=din-aposta
+                        condicao = False
         elif comeout=='F':
             if (d1+d2==5 or d1+d2==6 or d1+d2==7 or d1+d2==8):
                 din=0
