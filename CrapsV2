@@ -100,6 +100,7 @@ while din>0:
                     apostaT=int(input('Quanto você deseja apostar em T? '))
                 d3=random.randint(1,6)
                 d4=random.randint(1,6)
+                condicao = True
                 while F:
                     if (d3+d4==5 or d3+d4==6 or d3+d4==7 or d3+d4==8):
                         din=0
@@ -139,7 +140,6 @@ while din>0:
                         din=din-apostaT
                         print('Perdeu em T: ', din)
                         T=False
-                condicao = True
                 while condicao:
                     if (d3+d4!=d1+d2 or d3+d4!=7):
                         d3=random.randint(1,6)
