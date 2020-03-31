@@ -84,15 +84,14 @@ while din>0:
             if TTOF=='Y':
                 T=True
                 apostaT=int(input('Quanto você deseja apostar em T? '))
-            condicao = True
             d3=random.randint(1,6)
             d4=random.randint(1,6)
             while F:
-                apostaF=int(input('Quanto você deseja apostar em F? '))
                 if (d3+d4==5 or d3+d4==6 or d3+d4==7 or d3+d4==8):
                     din=0
                     print('Perdeu em F: ', din)
                     F=False
+                    break
                 elif (d3+d4==3 or d3+d4==4 or d3+d4==9 or d3+d4==10 or d3+d4==11):
                     din=din+apostaF
                     print('Ganhou em F: ', din)
@@ -106,7 +105,6 @@ while din>0:
                     print('Ganhou em F: ', din)
                     F=False
             while AC:
-                apostaAC=int(input('Quanto você deseja apostar em AC? '))
                 if(d3+d4==2 or d3+d4==3 or d3+d4==12):
                     din=din+7*apostaAC
                     print('Ganhou em AC: ', din)
@@ -116,7 +114,6 @@ while din>0:
                     print('Perdeu em AC: ', din)
                     AC=False
             while T:
-                apostaT=int(input('Quanto você deseja apostar em T? '))
                 if d3+d4==12:
                     din=din+30*apostaT
                     print('Ganhou em T: ', din)
@@ -125,6 +122,7 @@ while din>0:
                     din=din-apostaT
                     print('Perdeu em T: ', din)
                     T=False
+            condicao = True
             while condicao:
                 if (d3+d4!=d1+d2 or d3+d4!=7):
                     d3=random.randint(1,6)
