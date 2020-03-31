@@ -10,28 +10,33 @@ while din>0:
         F=False
         AC=False
         T=False
+        possivelaposta=din
         PLBTOF=input('Deseja apostar em PLB?(y/n) ')
         FTOF=input('Deseja apostar em F?(y/n) ')
         ACTOF=input('Deseja apostar em AC?(y/n) ')
         TTOF=input('Deseja apostar em T?(y/n) ')
         if PLBTOF=='y':
             PLB=True
-            apostaPLB=int(input('Quanto você deseja apostar em PLB? 1-{}: '.format(din)))
+            apostaPLB=int(input('Quanto você deseja apostar em PLB? 0-{}: '.format(possivelaposta)))
+            possivelaposta=possivelaposta-apostaPLB
             if apostaPLB<=0:
                 PLB=False
         if FTOF=='y':
             F=True
-            apostaF=int(input('Quanto você deseja apostar em F? 1-{}: '.format(din)))
+            apostaF=int(input('Quanto você deseja apostar em F? 0-{}: '.format(possivelaposta)))
+            possivelaposta=possivelaposta-apostaF
             if apostaF<=0:
                 F=False
         if ACTOF=='y':
             AC=True
-            apostaAC=int(input('Quanto você deseja apostar em AC? 1-{}: '.format(din)))
+            apostaAC=int(input('Quanto você deseja apostar em AC? 0-{}: '.format(possivelaposta)))
+            possivelaposta=possivelaposta-apostaAC
             if apostaAC<=0:
                 AC=False
         if TTOF=='y':
             T=True
-            apostaT=int(input('Quanto você deseja apostar em T? 1-{}: '.format(din)))
+            apostaT=int(input('Quanto você deseja apostar em T? 0-{}: '.format(possivelaposta)))
+            possivelaposta=possivelaposta-apostaT
             if apostaT<=0:
                 T=False
         if PLB==False and F==False and AC==False and T==False:
@@ -88,22 +93,26 @@ while din>0:
             else:
                 print('Fase:Point')
                 print('Seu dinheiro é:{} '.format(din))
+                possivelaposta=din
                 FTOF=input('Deseja apostar em F?(y/n) ')
                 ACTOF=input('Deseja apostar em AC?(y/n) ')
                 TTOF=input('Deseja apostar em T?(y/n) ')
                 if FTOF=='y':
                     F=True
-                    apostaF=int(input('Quanto você deseja apostar em F? 1-{}: '.format(din)))
+                    apostaF=int(input('Quanto você deseja apostar em F? 0-{}: '.format(possivelaposta)))
+                    possivelaposta=possivelaposta-apostaF
                     if apostaF<=0:
                         F=False
                 if ACTOF=='y':
                     AC=True
-                    apostaAC=int(input('Quanto você deseja apostar em AC? 1-{}: '.format(din)))
+                    apostaAC=int(input('Quanto você deseja apostar em AC? 0-{}: '.format(possivelaposta)))
+                    possivelaposta=possivelaposta-apostaAC
                     if apostaAC<=0:
                         AC=False
                 if TTOF=='y':
                     T=True
-                    apostaT=int(input('Quanto você deseja apostar em T? 1-{}: '.format(din)))
+                    apostaT=int(input('Quanto você deseja apostar em T? 0-{}: '.format(possivelaposta)))
+                    possvielaposta=possivelaposta-apostaT
                     if apostaT<=0:
                         T=False
                 d3=random.randint(1,6)
