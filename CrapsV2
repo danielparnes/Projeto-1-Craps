@@ -16,12 +16,16 @@ while din>0:
     TTOF=input('Deseja apostar em T?(Y/N) ')
     if PLBTOF=='Y':
         PLB=True
+        apostaPLB=int(input('Quanto você deseja apostar em PLB? '))
     if FTOF=='Y':
         F=True
+        apostaF=int(input('Quanto você deseja apostar em F? '))
     if ACTOF=='Y':
         AC=True
+        apostaAC=int(input('Quanto você deseja apostar em AC? '))
     if TTOF=='Y':
         T=True
+        apostaT=int(input('Quanto você deseja apostar em T? '))
     while PLB:
         aposta=int(input('Quanto você deseja apostar em PLB? '))
         if (d1+d2==7 or d1+d2==11):
@@ -34,8 +38,19 @@ while din>0:
             print('Resultado dos dados: ',d1+d2)
         else:
             print('Fase:Point')
+            FTOF=input('Deseja apostar em F?(Y/N) ')
+            ACTOF=input('Deseja apostar em AC?(Y/N) ')
+            TTOF=input('Deseja apostar em T?(Y/N) ')
+            if FTOF=='Y':
+                F=True
+                apostaF=int(input('Quanto você deseja apostar em F? '))
+            if ACTOF=='Y':
+                AC=True
+                apostaAC=int(input('Quanto você deseja apostar em AC? '))
+            if TTOF=='Y':
+                T=True
+                apostaT=int(input('Quanto você deseja apostar em T? '))
             condicao = True
-            print('Resultado dos dados: ',d1+d2)
             d3=random.randint(1,6)
             d4=random.randint(1,6)
             while F:
