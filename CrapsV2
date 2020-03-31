@@ -29,47 +29,47 @@ while din>0:
     while F:
         if (d1+d2==5 or d1+d2==6 or d1+d2==7 or d1+d2==8):
             din=0
-            print('Perdeu: ')
+            print('Perdeu em F: ', din)
             F=False
         elif (d1+d2==3 or d1+d2==4 or d1+d2==9 or d1+d2==10 or d1+d2==11):
             din=din+apostaF
-            print('Ganhou: ')
+            print('Ganhou em F: ', din)
             F=False
         elif d1+d2==2:
             din=din+2*apostaF
-            print('Ganhou: ')
+            print('Ganhou em F: ', din)
             F=False
         else:
             din=din+3*apostaF
-            print('Ganhou: ')
+            print('Ganhou em F: ', din)
             F=False
     while AC:
         if(d1+d2==2 or d1+d2==3 or d1+d2==12):
             din=din+7*apostaAC
-            print('Ganhou: ')
+            print('Ganhou em AC: ', din)
             AC=False
         else:
             din=din-apostaAC
-            print('Perdeu: ')
+            print('Perdeu em AC: ', din)
             AC=False
     while T:
         if d1+d2==12:
             din=din+30*apostaT
-            print('Ganhou: ')
+            print('Ganhou em T: ', din)
             T=False
         else:
             din=din-apostaT
-            print('Perdeu: ')
+            print('Perdeu em T: ', din)
             T=False
     while PLB:
         if (d1+d2==7 or d1+d2==11):
-                print('Ganhou: ')
+                print('Ganhou em PLB: ', din)
                 din=din+apostaPLB
                 PLB=False
         elif (d1+d2==2 or d1+d2==3 or d1+d2==12):
             din=din-apostaPLB
             PLB=False
-            print('Perdeu: ')
+            print('Perdeu em PLB: ', din)
         else:
             print('Fase:Point')
             FTOF=input('Deseja apostar em F?(Y/N) ')
@@ -91,52 +91,52 @@ while din>0:
                 apostaF=int(input('Quanto você deseja apostar em F? '))
                 if (d3+d4==5 or d3+d4==6 or d3+d4==7 or d3+d4==8):
                     din=0
-                    print('Perdeu: ')
+                    print('Perdeu em F: ', din)
                     F=False
                 elif (d3+d4==3 or d3+d4==4 or d3+d4==9 or d3+d4==10 or d3+d4==11):
                     din=din+apostaF
-                    print('Ganhou: ')
+                    print('Ganhou em F: ', din)
                     F=False
                 elif d3+d4==2:
                     din=din+2*apostaF
-                    print('Ganhou: ')
+                    print('Ganhou em F: ', din)
                     F=False
                 else:
                     din=din+3*apostaF
-                    print('Ganhou: ')
+                    print('Ganhou em F: ', din)
                     F=False
             while AC:
                 apostaAC=int(input('Quanto você deseja apostar em AC? '))
                 if(d3+d4==2 or d3+d4==3 or d3+d4==12):
                     din=din+7*apostaAC
-                    print('Ganhou: ')
+                    print('Ganhou em AC: ', din)
                     AC=False
                 else:
                     din=din-apostaAC
-                    print('Perdeu: ')
+                    print('Perdeu em AC: ', din)
                     AC=False
             while T:
                 apostaT=int(input('Quanto você deseja apostar em T? '))
                 if d3+d4==12:
                     din=din+30*apostaT
-                    print('Ganhou: ')
+                    print('Ganhou em T: ', din)
                     T=False
                 else:
                     din=din-apostaT
-                    print('Perdeu: ')
+                    print('Perdeu em T: ', din)
                     T=False
             while condicao:
                 if (d3+d4!=d1+d2 or d3+d4!=7):
                     d3=random.randint(1,6)
                     d4=random.randint(1,6)
                 if d3+d4==d1+d2:
-                    print('Comeout= Point, ganhou')
+                    print('Comeout= Point, ganhou em PLB', din)
                     din=din+apostaPLB
                     condicao = False
                     PLB = False
                 else:
-                    print('Point = 7, perdeu')
+                    print('Point = 7, perdeu em PLB', din)
                     din=0
                     condicao = False
                     PLB =False
-print('Perdeu')
+print('Perdeu todo o seu dinheiro')
