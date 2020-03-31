@@ -22,3 +22,65 @@ while din>0:
         AC=True
     if TTOF=='Y':
         T=True
+    while PLB:
+        aposta=int(input('Quanto você deseja apostar em PLB? '))
+        if (d1+d2==7 or d1+d2==11):
+                print('Resultado dos dados: ',d1+d2)
+                din=din+aposta
+                PLB=False
+        elif (d1+d2==2 or d1+d2==3 or d1+d2==12):
+            din=din-aposta
+            PLB=False
+            print('Resultado dos dados: ',d1+d2)
+        else:
+            print('Fase:Point')
+            condicao = True
+            print('Resultado dos dados: ',d1+d2)
+            d3=random.randint(1,6)
+            d4=random.randint(1,6)
+            while F:
+                if (d1+d2==5 or d1+d2==6 or d1+d2==7 or d1+d2==8):
+                    din=0
+                    print('Resultado dos dados, perdeu: ',d1+d2)
+                    F=False
+                elif (d1+d2==3 or d1+d2==4 or d1+d2==9 or d1+d2==10 or d1+d2==11):
+                    din=din+aposta
+                    print('Resultado dos dados, ganhou: ',d1+d2)
+                    F=False
+                elif d1+d2==2:
+                    din=din+2*aposta
+                    print('Resultado dos dados, ganhou: ',d1+d2)
+                    F=False
+                else:
+                    din=din+3*aposta
+                    print('Resultado dos dados, ganhou: ',d1+d2)
+                    F=False
+            while AC:
+                if(d1+d2==2 or d1+d2==3 or d1+d2==12):
+                    din=din+7*aposta
+                    print('Resultado dos dados, ganhou: ',d1+d2)
+                    AC=False
+                else:
+                    din=din-aposta
+                    print('Resultado dos dados, perdeu: ',d1+d2)
+                    AC=False
+            while T:
+                if d1+d2==12:
+                    din=din+30*aposta
+                    print('Resultado dos dados, ganhou: ',d1+d2)
+                    T=False
+                else:
+                    din=din-aposta
+                    print('Resultado dos dados, perdeu: ',d1+d2)
+            while condicao:
+                if (d3+d4!=d1+d2 or d3+d4!=7):
+                    d3=random.randint(1,6)
+                    d4=random.randint(1,6)
+                if d3+d4==d1+d2:
+                    print('Comeout= Point, ganhou')
+                    din=din+aposta
+                    condicao = False
+                else:
+                    print('Point = 7, perdeu')
+                    din=0
+                    condicao = False
