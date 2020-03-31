@@ -46,7 +46,7 @@ while din>0:
         while F:
             if (d1+d2==5 or d1+d2==6 or d1+d2==7 or d1+d2==8):
                 din=0
-                print('Perdeu em F:{}'.format(din))
+                print('Perdeu em F: ', din)
                 PLB=False
                 F=False
                 AC=False
@@ -111,7 +111,7 @@ while din>0:
                         AC=False
                 if TTOF=='y':
                     T=True
-                    apostaT=int(input('Quanto você deseja apostar em T? 1-{}: '.format(possivelaposta)))
+                    apostaT=int(input('Quanto você deseja apostar em T? 0-{}: '.format(possivelaposta)))
                     possvielaposta=possivelaposta-apostaT
                     if apostaT<=0:
                         T=False
