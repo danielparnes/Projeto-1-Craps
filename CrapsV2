@@ -1,0 +1,24 @@
+import random
+
+din=100
+while din>0:
+    print('seu dinheiro é: ',din)
+    d1=random.randint(1,6)
+    d2=random.randint(1,6)
+    print('Fase: Come Out')
+    PLB=False
+    F=False
+    AC=False
+    T=False
+    PLBTOF=input('Deseja apostar em PLB?(Y/N) ')
+    FTOF=input('Deseja apostar em F?(Y/N) ')
+    ACTOF=input('Deseja apostar em AC?(Y/N) ')
+    TTOF=input('Deseja apostar em T?(Y/N) ')
+    if PLBTOF=='Y':
+        PLB=True
+    if FTOF=='Y':
+        F=True
+    if ACTOF=='Y':
+        AC=True
+    if TTOF=='Y':
+        T=True
