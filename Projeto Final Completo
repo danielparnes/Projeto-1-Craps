@@ -46,7 +46,7 @@ while din>0:
         while F:
             if (d1+d2==5 or d1+d2==6 or d1+d2==7 or d1+d2==8):
                 din=0
-                print('Perdeu em F: ', din)
+                print('Perdeu em F:{}'.format(din))
                 PLB=False
                 F=False
                 AC=False
