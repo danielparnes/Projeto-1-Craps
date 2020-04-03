@@ -3,8 +3,8 @@ import random
 din=100
 while din>0:
         print('Seu dinheiro é:{} '.format(din))
-        d1=random.randint(1,6)
-        d2=random.randint(1,6)
+        d1=3
+        d2=1
         print('Fase: Come Out')
         PLB=False
         F=False
@@ -18,24 +18,36 @@ while din>0:
         if PLBTOF=='y':
             PLB=True
             apostaPLB=int(input('Quanto você deseja apostar em PLB? 0-{}: '.format(possivelaposta)))
+            while apostaPLB>possivelaposta:
+                print('Aposta indisponível')
+                apostaPLB=int(input('Quanto você deseja apostar em PLB? 0-{}: '.format(possivelaposta)))
             possivelaposta=possivelaposta-apostaPLB
             if apostaPLB<=0:
                 PLB=False
         if FTOF=='y':
             F=True
             apostaF=int(input('Quanto você deseja apostar em F? 0-{}: '.format(possivelaposta)))
+            while apostaF>possivelaposta:
+                print('Aposta indisponível')
+                apostaF=int(input('Quanto você deseja apostar em F? 0-{}: '.format(possivelaposta)))
             possivelaposta=possivelaposta-apostaF
             if apostaF<=0:
                 F=False
         if ACTOF=='y':
             AC=True
             apostaAC=int(input('Quanto você deseja apostar em AC? 0-{}: '.format(possivelaposta)))
+            while apostaAC>possivelaposta:
+                print('Aposta indisponível')
+                apostaAC=int(input('Quanto você deseja apostar em AC? 0-{}: '.format(possivelaposta)))
             possivelaposta=possivelaposta-apostaAC
             if apostaAC<=0:
                 AC=False
         if TTOF=='y':
             T=True
             apostaT=int(input('Quanto você deseja apostar em T? 0-{}: '.format(possivelaposta)))
+            while apostaT>possivelaposta:
+                print('Aposta indisponível')
+                apostaT=int(input('Quanto você deseja apostar em T? 0-{}: '.format(possivelaposta)))
             possivelaposta=possivelaposta-apostaT
             if apostaT<=0:
                 T=False
@@ -53,71 +65,80 @@ while din>0:
                 T=False
             elif (d1+d2==3 or d1+d2==4 or d1+d2==9 or d1+d2==10 or d1+d2==11):
                 din=din+apostaF
-                print('Ganhou em F:{}'.format(din))
+                print('Ganhou em F')
                 F=False
             elif d1+d2==2:
                 din=din+2*apostaF
-                print('Ganhou em F:{}'.format(din))
+                print('Ganhou em F')
                 F=False
             else:
                 din=din+3*apostaF
-                print('Ganhou em F:{}'.format(din))
+                print('Ganhou em F ')
                 F=False
         while AC:
             if(d1+d2==2 or d1+d2==3 or d1+d2==12):
                 din=din+7*apostaAC
-                print('Ganhou em AC:{}'.format(din))
+                print('Ganhou em AC ')
                 AC=False
             else:
                 din=din-apostaAC
-                print('Perdeu em AC:{}'.format(din))
+                print('Perdeu em AC')
                 AC=False
         while T:
             if d1+d2==12:
                 din=din+30*apostaT
-                print('Ganhou em T:{}'.format(din))
+                print('Ganhou em T')
                 T=False
             else:
                 din=din-apostaT
-                print('Perdeu em T:{}'.format(din))
+                print('Perdeu em T ')
                 T=False
         while PLB:
             if (d1+d2==7 or d1+d2==11):
-                    print('Ganhou em PLB:{}'.format(din))
+                    print('Ganhou em PLB')
                     din=din+apostaPLB
                     PLB=False
             elif (d1+d2==2 or d1+d2==3 or d1+d2==12):
                 din=din-apostaPLB
                 PLB=False
-                print('Perdeu em PLB:{}'.format(din))
+                print('Perdeu em PLB')
             else:
                 print('Fase:Point')
-                print('Seu dinheiro é:{} '.format(din))
-                possivelaposta=din
+                possivelaposta=din-apostaPLB
+                print('Seu dinheiro para aposta é:{} '.format(possivelaposta))
                 FTOF=input('Deseja apostar em F?(y/n) ')
                 ACTOF=input('Deseja apostar em AC?(y/n) ')
                 TTOF=input('Deseja apostar em T?(y/n) ')
                 if FTOF=='y':
                     F=True
                     apostaF=int(input('Quanto você deseja apostar em F? 0-{}: '.format(possivelaposta)))
+                    while apostaF>possivelaposta:
+                        print('Aposta indisponível')
+                        apostaF=int(input('Quanto você deseja apostar em F? 0-{}: '.format(possivelaposta)))
                     possivelaposta=possivelaposta-apostaF
                     if apostaF<=0:
                         F=False
                 if ACTOF=='y':
                     AC=True
                     apostaAC=int(input('Quanto você deseja apostar em AC? 0-{}: '.format(possivelaposta)))
+                    while apostaAC>possivelaposta:
+                        print('Aposta indisponível')
+                        apostaAC=int(input('Quanto você deseja apostar em AC? 0-{}: '.format(possivelaposta)))
                     possivelaposta=possivelaposta-apostaAC
                     if apostaAC<=0:
                         AC=False
                 if TTOF=='y':
                     T=True
                     apostaT=int(input('Quanto você deseja apostar em T? 0-{}: '.format(possivelaposta)))
-                    possvielaposta=possivelaposta-apostaT
+                    while apostaT>possivelaposta:
+                        print('Aposta indisponível')
+                        apostaT=int(input('Quanto você deseja apostar em T? 0-{}: '.format(possivelaposta)))
+                    possivelaposta=possivelaposta-apostaT
                     if apostaT<=0:
                         T=False
                 d3=random.randint(1,6)
                 d4=random.randint(1,6)
-                print('Resultado dos dados:D1-', d3,'D2-',d4)
+                print('Resultado dos dados:D1-{} D2-{}'.format(d3,d4))
                 condicao = True
                 while F:
                     if (d3+d4==5 or d3+d4==6 or d3+d4==7 or d3+d4==8):
@@ -130,46 +151,45 @@ while din>0:
                         condicao=False
                     elif (d3+d4==3 or d3+d4==4 or d3+d4==9 or d3+d4==10 or d3+d4==11):
                         din=din+apostaF
-                        print('Ganhou em F:{}'.format(din))
+                        print('Ganhou em F')
                         F=False
                     elif d3+d4==2:
                         din=din+2*apostaF
-                        print('Ganhou em F:{}'.format(din))
+                        print('Ganhou em F')
                         F=False
                     else:
                         din=din+3*apostaF
-                        print('Ganhou em F:{}'.format(din))
+                        print('Ganhou em F')
                         F=False
                 while AC:
                     if(d3+d4==2 or d3+d4==3 or d3+d4==12):
                         din=din+7*apostaAC
-                        print('Ganhou em AC:{}'.format(din))
-                        AC=False
+                        print('Ganhou em AC')
                     else:
                         din=din-apostaAC
-                        print('Perdeu em AC:{}'.format(din))
+                        print('Perdeu em AC')
                         AC=False
                 while T:
                     if d3+d4==12:
                         din=din+30*apostaT
-                        print('Ganhou em T:{}'.format(din))
+                        print('Ganhou em T:')
                         T=False
                     else:
                         din=din-apostaT
-                        print('Perdeu em T:{}'.format(din))
+                        print('Perdeu em T')
                         T=False
                 while condicao:
                     if (d3+d4!=d1+d2 or d3+d4!=7):
                         d3=random.randint(1,6)
                         d4=random.randint(1,6)
                     if d3+d4==d1+d2:
-                        print('Comeout= Point, ganhou em PLB:{}'.format(din))
                         din=din+apostaPLB
+                        print('Comeout= Point, ganhou em PLB')
                         condicao = False
                         PLB = False
                     else:
-                        print('Point = 7, perdeu em PLB:{}'.format(din))
                         din=0
+                        print('Point = 7, perdeu em PLB:{}'.format(din))
                         condicao = False
                         PLB =False
 print('Fim')
